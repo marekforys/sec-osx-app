@@ -20,7 +20,11 @@ let package = Package(
             name: "sec-osx-app",
             dependencies: [],
             path: "sec-osx-app"
+        ),
+        .testTarget(
+            name: "sec-osx-appTests",
+            dependencies: ["sec-osx-app"],
+            path: "Tests/sec-osx-appTests"
         )
     ]
 )
-
