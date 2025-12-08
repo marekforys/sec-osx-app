@@ -34,6 +34,7 @@
 		AA111111111111111111111B /* sec-osx-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sec-osx-app.entitlements"; sourceTree = "<group>"; };
 		AA2222222222222222222222 /* sec_osx_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sec_osx_appTests.swift; sourceTree = "<group>"; };
 		AA2222222222222222222223 /* sec-osx-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sec-osx-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD5EBA42EE79A0D00B5A33C /* sec-osx-app.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sec-osx-app.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		AA111111111111111111111D = {
 			isa = PBXGroup;
 			children = (
+				EAD5EBA42EE79A0D00B5A33C /* sec-osx-app.xctestplan */,
 				AA111111111111111111111E /* sec-osx-app */,
 				AA2222222222222222222225 /* sec-osx-appTests */,
 				AA111111111111111111111F /* Products */,

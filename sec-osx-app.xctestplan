@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "BD2F480E-ABD7-41A9-8EEC-15E5920D3440",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:sec-osx-app.xcodeproj",
+      "identifier" : "AA1111111111111111111120",
+      "name" : "sec-osx-app"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:sec-osx-app.xcodeproj",
+        "identifier" : "AA2222222222222222222226",
+        "name" : "sec-osx-appTests"
+      }
+    }
+  ],
+  "version" : 1
+}

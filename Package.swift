@@ -24,7 +24,7 @@ let package = Package(
         .testTarget(
             name: "sec-osx-appTests",
             dependencies: ["sec-osx-app"],
-            path: "Tests/sec-osx-appTests"
+            path: "sec-osx-appTests"
         )
     ]
 )
