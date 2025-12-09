@@ -6,31 +6,91 @@
 //
 
 import SwiftUI
+import Security
+import Combine
 
 struct ContentView: View {
     @EnvironmentObject var securityManager: SecurityManager
+    @StateObject private var passwordManager = PasswordManager.shared
+    @State private var selection: NavigationItem? = .dashboard
+
+    enum NavigationItem: Hashable {
+        case dashboard
+        case passwordManager
+        case firewall
+        case gatekeeper
+        case fileVault
+        case systemIntegrity
+        case systemUpdates
+    }
 
     var body: some View {
         NavigationSplitView {
-            SidebarView()
+            SidebarView(selection: $selection)
         } detail: {
-            SecurityDashboardView()
-                .environmentObject(securityManager)
+            NavigationStack {
+                Group {
+                    switch selection {
+                    case .dashboard:
+                        SecurityDashboardView()
+                    case .passwordManager:
+                        PasswordManagerView()
+                    case .firewall, .gatekeeper, .fileVault, .systemIntegrity, .systemUpdates:
+                        Text("Feature coming soon")
+                            .font(.title)
+                            .foregroundColor(.secondary)
+                    case .none:
+                        Text("Select an item from the sidebar")
+                            .font(.title)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
         }
+        .environmentObject(securityManager)
+        .environmentObject(passwordManager)
     }
 }
 
 struct SidebarView: View {
+    @Binding var selection: ContentView.NavigationItem?
+
     var body: some View {
-        List {
-            Label("Security Dashboard", systemImage: "shield.checkered")
-            Label("Firewall", systemImage: "network.badge.shield.half.filled")
-            Label("Gatekeeper", systemImage: "lock.shield")
-            Label("FileVault", systemImage: "lock.rotation")
-            Label("System Integrity", systemImage: "checkmark.shield")
-            Label("System Updates", systemImage: "arrow.down.circle")
+        List(selection: $selection) {
+            Section("Security") {
+                NavigationLink(value: ContentView.NavigationItem.dashboard) {
+                    Label("Security Dashboard", systemImage: "shield.checkered")
+                }
+            }
+
+            Section("Password Management") {
+                NavigationLink(value: ContentView.NavigationItem.passwordManager) {
+                    Label("Password Manager", systemImage: "key.fill")
+                }
+            }
+
+            Section("System Settings") {
+                NavigationLink(value: ContentView.NavigationItem.firewall) {
+                    Label("Firewall", systemImage: "network.badge.shield.half.filled")
+                }
+                NavigationLink(value: ContentView.NavigationItem.gatekeeper) {
+                    Label("Gatekeeper", systemImage: "lock.shield")
+                }
+                NavigationLink(value: ContentView.NavigationItem.fileVault) {
+                    Label("FileVault", systemImage: "lock.rotation")
+                }
+                NavigationLink(value: ContentView.NavigationItem.systemIntegrity) {
+                    Label("System Integrity", systemImage: "checkmark.shield")
+                }
+                NavigationLink(value: ContentView.NavigationItem.systemUpdates) {
+                    Label("System Updates", systemImage: "arrow.down.circle")
+                }
+            }
         }
+        .listStyle(.sidebar)
         .navigationTitle("Security")
+        .frame(minWidth: 200)
     }
 }
 
@@ -297,4 +357,3 @@ struct RecommendationRow: View {
     ContentView()
         .environmentObject(SecurityManager())
 }
-

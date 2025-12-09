@@ -12,6 +12,10 @@
 		AA1111111111111111111115 /* SecurityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1111111111111111111116 /* SecurityManager.swift */; };
 		AA1111111111111111111117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1111111111111111111118 /* Assets.xcassets */; };
 		AA2222222222222222222221 /* sec_osx_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222222 /* sec_osx_appTests.swift */; };
+		EAD5EBA72EE890BC00B5A33C /* PasswordManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5EBA62EE890BC00B5A33C /* PasswordManagerView.swift */; };
+		EAD5EBA82EE890BC00B5A33C /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5EBA52EE890BC00B5A33C /* PasswordManager.swift */; };
+		EAD5EBA92EE890BC00B5A33C /* PasswordManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5EBA62EE890BC00B5A33C /* PasswordManagerView.swift */; };
+		EAD5EBAA2EE890BC00B5A33C /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5EBA52EE890BC00B5A33C /* PasswordManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +38,9 @@
 		AA111111111111111111111B /* sec-osx-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sec-osx-app.entitlements"; sourceTree = "<group>"; };
 		AA2222222222222222222222 /* sec_osx_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sec_osx_appTests.swift; sourceTree = "<group>"; };
 		AA2222222222222222222223 /* sec-osx-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sec-osx-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAD5EBA42EE79A0D00B5A33C /* sec-osx-app.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sec-osx-app.xctestplan"; sourceTree = "<group>"; };
+		EAD5EBA42EE79A0D00B5A33C /* sec-osx-app.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sec-osx-app.xctestplan"; sourceTree = "<group>"; };
+		EAD5EBA52EE890BC00B5A33C /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
+		EAD5EBA62EE890BC00B5A33C /* PasswordManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManagerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,8 @@
 		AA111111111111111111111E /* sec-osx-app */ = {
 			isa = PBXGroup;
 			children = (
+				EAD5EBA52EE890BC00B5A33C /* PasswordManager.swift */,
+				EAD5EBA62EE890BC00B5A33C /* PasswordManagerView.swift */,
 				AA1111111111111111111112 /* sec_osx_appApp.swift */,
 				AA1111111111111111111114 /* ContentView.swift */,
 				AA1111111111111111111116 /* SecurityManager.swift */,
@@ -197,6 +205,8 @@
 				AA1111111111111111111111 /* sec_osx_appApp.swift in Sources */,
 				AA1111111111111111111113 /* ContentView.swift in Sources */,
 				AA1111111111111111111115 /* SecurityManager.swift in Sources */,
+				EAD5EBA92EE890BC00B5A33C /* PasswordManagerView.swift in Sources */,
+				EAD5EBAA2EE890BC00B5A33C /* PasswordManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2222222222222222222221 /* sec_osx_appTests.swift in Sources */,
+				EAD5EBA72EE890BC00B5A33C /* PasswordManagerView.swift in Sources */,
+				EAD5EBA82EE890BC00B5A33C /* PasswordManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
