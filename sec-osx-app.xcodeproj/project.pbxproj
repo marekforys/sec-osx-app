@@ -16,6 +16,7 @@
 		EAD5EBA82EE890BC00B5A33C /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5EBA52EE890BC00B5A33C /* PasswordManager.swift */; };
 		EAD5EBA92EE890BC00B5A33C /* PasswordManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5EBA62EE890BC00B5A33C /* PasswordManagerView.swift */; };
 		EAD5EBAA2EE890BC00B5A33C /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5EBA52EE890BC00B5A33C /* PasswordManager.swift */; };
+		EAD5EBAC2EE8992500B5A33C /* PasswordManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5EBAB2EE8992500B5A33C /* PasswordManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		EAD5EBA42EE79A0D00B5A33C /* sec-osx-app.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sec-osx-app.xctestplan"; sourceTree = "<group>"; };
 		EAD5EBA52EE890BC00B5A33C /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
 		EAD5EBA62EE890BC00B5A33C /* PasswordManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManagerView.swift; sourceTree = "<group>"; };
+		EAD5EBAB2EE8992500B5A33C /* PasswordManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		AA111111111111111111111D = {
 			isa = PBXGroup;
 			children = (
+				EAD5EBAB2EE8992500B5A33C /* PasswordManagerTests.swift */,
 				EAD5EBA42EE79A0D00B5A33C /* sec-osx-app.xctestplan */,
 				AA111111111111111111111E /* sec-osx-app */,
 				AA2222222222222222222225 /* sec-osx-appTests */,
@@ -216,6 +219,7 @@
 			files = (
 				AA2222222222222222222221 /* sec_osx_appTests.swift in Sources */,
 				EAD5EBA72EE890BC00B5A33C /* PasswordManagerView.swift in Sources */,
+				EAD5EBAC2EE8992500B5A33C /* PasswordManagerTests.swift in Sources */,
 				EAD5EBA82EE890BC00B5A33C /* PasswordManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

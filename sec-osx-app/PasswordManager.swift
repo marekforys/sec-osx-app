@@ -12,9 +12,15 @@ public class PasswordManager: ObservableObject {
     public static let shared = PasswordManager()
     @Published public var passwords: [PasswordItem] = []
 
+    #if DEBUG
+    init() {
+        loadPasswords()
+    }
+    #else
     private init() {
         loadPasswords()
     }
+    #endif
 
     public struct PasswordItem: Identifiable, Codable {
         public let id: UUID
