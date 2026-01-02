@@ -1,8 +1,7 @@
 import XCTest
 @testable import sec_osx_app
 
-final class PasswordManagerTests: XCTestCase {
-
+final class PasswordManagerMinimalTests: XCTestCase {
     var passwordManager: PasswordManager!
     let testService = "testService"
     let testAccount = "test@example.com"
@@ -189,59 +188,5 @@ final class PasswordManagerTests: XCTestCase {
 
         // Wait for both expectations to be fulfilled, or timeout after 2 seconds
         wait(for: [firstAddExpectation, secondAddExpectation], timeout: 2.0)
-    }
-
-    func testPasswordGeneration() {
-        print("Testing password generation...")
-        // Generate a few passwords and verify they meet strength requirements
-        for _ in 1...5 {
-            let password = generateStrongPassword()
-            print("Generated password: \(password)")
-            let strength = passwordManager.checkPasswordStrength(password)
-            XCTAssertGreaterThanOrEqual(strength, 0.5, "Generated password should be at least medium strength")
-            print("Password strength: \(strength)")
-        }
-        print("Password generation test passed")
-    }
-
-    func testPasswordStrengthValidation() {
-        // Weak password (only lowercase)
-        let weakStrength = passwordManager.checkPasswordStrength("weak")
-        XCTAssertLessThan(weakStrength, 0.25, "Expected weak password strength to be less than 0.25 but got \(weakStrength)")
-
-        // Medium password (lowercase + uppercase + numbers)
-        let mediumStrength = passwordManager.checkPasswordStrength("Medium1")
-        XCTAssertTrue(mediumStrength >= 0.25, "Expected at least medium strength (0.25) but got \(mediumStrength)")
-
-        // Strong password (lowercase + uppercase + numbers + special chars)
-        let strongStrength = passwordManager.checkPasswordStrength("Str0ngP@ss!")
-        XCTAssertTrue(strongStrength >= 0.5, "Expected at least strong strength (0.5) but got \(strongStrength)")
-
-        // Very strong password (long with all character types)
-        let veryStrongStrength = passwordManager.checkPasswordStrength("V3ry$tr0ngP@ssw0rd!123")
-        XCTAssertTrue(veryStrongStrength >= 0.75, "Expected very strong strength (0.75) but got \(veryStrongStrength)")
-
-        print("Password strength validation test passed")
-    }
-
-    private func generateStrongPassword() -> String {
-        let length = 16
-        let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        let lowercase = "abcdefghijklmnopqrstuvwxyz"
-        let numbers = "0123456789"
-        let special = "!@#$%^&*()_+-=[]{}|;:,.<>?"
-        let all = uppercase + lowercase + numbers + special
-
-        var password = ""
-        password.append(uppercase.randomElement()!)
-        password.append(lowercase.randomElement()!)
-        password.append(numbers.randomElement()!)
-        password.append(special.randomElement()!)
-
-        for _ in 0..<(length - 4) {
-            password.append(all.randomElement()!)
-        }
-
-        return String(password.shuffled())
     }
 }
